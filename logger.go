@@ -45,6 +45,7 @@ func Init(settings Settings) {
 
 	var err error
 	logger, err = config.Build()
+	logger = logger.WithOptions(zap.AddCallerSkip(1))
 	if err != nil {
 		log.Fatal("logger init:", err)
 	}
