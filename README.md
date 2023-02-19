@@ -23,21 +23,21 @@ func main() {
 You can enable dev mode and/or enable adding stacktraces to messages of level Error and above (both are turned off by default).
 ```go
 import (
-	"flag"
+    "flag"
 
-	"github.com/pav5000/logger"
-	"go.uber.org/zap"
+    "github.com/pav5000/logger"
+    "go.uber.org/zap"
 )
 
 func main() {
-	var debugMode bool
-	flag.BoolVar(&debugMode, "debug", false, "Debug mode")
-	flag.Parse()
+    var debugMode bool
+    flag.BoolVar(&debugMode, "debug", false, "Debug mode")
+    flag.Parse()
 
-	logger.Init(logger.Settings{
-		DevMode: debugMode,
+    logger.Init(logger.Settings{
+        DevMode: debugMode,
         StackTracedErrors: true,
-	})
+    })
 
     // ......
 }
